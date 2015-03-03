@@ -1,5 +1,4 @@
 var validateModule = require('nsp-api').validateModule;
-var path = require('path');
 var fs = require('fs');
 var RegClient = require('silent-npm-registry-client');
 var npmconf = require('npmconf');
@@ -8,7 +7,7 @@ var async = require('async');
 
 var MAX_ASYNC_THROTTLING = 20;
 
-exports = module.exports = auditPackage;
+module.exports = auditPackage;
 
 function auditPackage(pkgPath, cb) {
     var pkg;
