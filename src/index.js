@@ -36,7 +36,7 @@ function auditPackage(pkgPath, cb) {
 function loadPkg(pkgPath, cb) {
     async.waterfall([
         assertPkgFileExists,
-        fs.readFile.bind(fs, pkgPath, { encoding: 'utf8' }),
+        fs.readFile.bind(fs, pkgPath, {encoding: 'utf8'}),
         function(pkgText, cb) { cb(null, JSON.parse(pkgText)); }
     ], cb);
 

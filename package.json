@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "offers a simple library to audit your package.json or a stream of package.json",
   "main": "src/index.js",
-  "bin": "bin/main.js",
   "scripts": {
     "codestyle": "./node_modules/.bin/jscs src/*.js",
     "lint": "./node_modules/.bin/jshint .",
@@ -12,6 +11,7 @@
     "test-cov-html": "node ./node_modules/.bin/lab -r html -o coverage.html tests/*-test.js"
   },
   "precommit": [
+    "codestyle", 
     "lint"
   ],
   "repository": {

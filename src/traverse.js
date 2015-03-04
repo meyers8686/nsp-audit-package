@@ -24,7 +24,7 @@ function traverse(registry, pkg, cb) {
         var dependencies =
             (pkg.dependencies ? Object.keys(pkg.dependencies) : [])
             .map(function(name) {
-                return { name: name, version: pkg.dependencies[name] };
+                return {name: name, version: pkg.dependencies[name]};
             });
 
         queryRegistry(registry, dependencies, then);
@@ -41,7 +41,7 @@ function traverse(registry, pkg, cb) {
 
         function add(p) {
             if (!p) {
-               return;
+                return;
             }
 
             p.parent = pkg;
@@ -55,7 +55,7 @@ function traverse(registry, pkg, cb) {
 }
 
 function queryRegistry(registry, modules, cb) {
-    async.mapLimit(modules, MAX_ASYNC_THROTTLING, query, cb); 
+    async.mapLimit(modules, MAX_ASYNC_THROTTLING, query, cb);
 
     function query(module, cb) {
         var name = module.name;
